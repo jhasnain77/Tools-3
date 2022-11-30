@@ -9,6 +9,8 @@ public class DialogueGraph : EditorWindow {
 
     private DialogueGraphView graphView;
 
+    private string fileName = "New Dialogue";
+
     [MenuItem("Tools/DialogueGraph")]
     private static void ShowWindow() {
         var window = GetWindow<DialogueGraph>();
@@ -39,6 +41,15 @@ public class DialogueGraph : EditorWindow {
     private void GenerateToolbar() {
         var toolbar = new Toolbar();
 
+        var fileNameTextField = new TextField("File Name");
+        fileNameTextField.SetValueWithoutNotify(fileName);
+        fileNameTextField.MarkDirtyRepaint();
+        fileNameTextField.RegisterValueChangedCallback(evt => fileName = evt.newValue);
+        toolbar.Add(fileNameTextField);
+
+        toolbar.Add(new Button(() => SaveData()) { text = "Save Data"});
+        toolbar.Add(new Button(() => LoadData()) { text = "Load Data"});
+
         var nodeCreateButton = new Button(() => {
             graphView.CreateNode("Dialogue Node");
         });
@@ -46,5 +57,25 @@ public class DialogueGraph : EditorWindow {
         toolbar.Add(nodeCreateButton);
 
         rootVisualElement.Add(toolbar);
+    }
+
+    private void SaveData() {
+        if (string.IsNullOrEmpty(fileName)) {
+            EditorUtility.DisplayDialog("Invalid file name!", "Enter a valid file name.", "Ok");
+            return;
+        }
+
+        var saveUtility = GraphSaveUtility.GetInstance(graphView);
+        saveUtility.SaveGraph(fileName);
+    }
+
+    private void LoadData() {
+        if (string.IsNullOrEmpty(fileName)) {
+            EditorUtility.DisplayDialog("Invalid file name!", "Enter a valid file name.", "Ok");
+            return;
+        }
+
+        var loadUtility = GraphSaveUtility.GetInstance(graphView);
+        loadUtility.LoadGraph(fileName);
     }
 }
