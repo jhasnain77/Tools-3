@@ -7,32 +7,32 @@ using System.Linq;
 public class DialogueManager : MonoBehaviour
 {
 
-    [SerializeField] DialogueContainer dialogueContainer;   // This is only for debugging. Will include a method that
+    [SerializeField] DialogueContainer dialogueContainer;   // This is only for debugging and demo. Will include a method that
                                                             // declares this when called from a game manager script.
 
     [SerializeField] GameObject choiceBox;
-    [SerializeField] Text dialogueText;
-    [SerializeField] List<Text> choicesText;
+    [SerializeField] LocalizationText dialogueText;
+    [SerializeField] List<LocalizationText> choicesText;
 
     private string currentNodeGUID;
     private List<DialogueNodeData> nodeData;
     private List<NodeLinkData> linkData;
 
     private List<NodeLinkData> links;
-    private List<string> choices;
+    private List<int> choices;
 
     private int currentSelection;
 
     private void Start() {
         nodeData = dialogueContainer.DialogueNodeData;
         linkData = dialogueContainer.NodeLinks;
-        currentNodeGUID = nodeData[nodeData.Count - 1].Guid;
+        currentNodeGUID = nodeData[0].Guid;
         LoadNode();
     }
 
     private void Update() {
         
-        if (Input.GetKeyDown(KeyCode.Space)) {
+        if (Input.GetKeyDown(KeyCode.Z)) {
             // Go to the next node corresponding to the choice
             // Set the current Guid to the one that corresponds with the choice
             if (links.Count > 0) {
@@ -42,33 +42,33 @@ public class DialogueManager : MonoBehaviour
         }
 
         if (Input.GetKeyDown(KeyCode.DownArrow)) {
-            choicesText[currentSelection].color = Color.black;
+            choicesText[currentSelection].text.color = Color.black;
             if (currentSelection < choices.Count - 1) {
                 currentSelection++;
             } else {
                 currentSelection = 0;
             }
-            choicesText[currentSelection].color = Color.blue;
+            choicesText[currentSelection].text.color = Color.blue;
         } else if (Input.GetKeyDown(KeyCode.UpArrow)) {
-            choicesText[currentSelection].color = Color.black;
+            choicesText[currentSelection].text.color = Color.black;
             if (currentSelection == 0) {
                 currentSelection = choices.Count - 1;
             } else {
                 currentSelection--;
             }
-            choicesText[currentSelection].color = Color.blue;
+            choicesText[currentSelection].text.color = Color.blue;
         }
 
     }
 
     private void LoadNode() {
 
-        dialogueText.text = nodeData.Where(x => x.Guid == currentNodeGUID).ToList()[0].DialogueText;
-
+        dialogueText.defaultField.index = nodeData.Where(x => x.Guid == currentNodeGUID).ToList()[0].LocalizationIndex;
+        dialogueText.SetDefaultText();
         currentSelection = 0;
 
         links = linkData.Where(x => x.BaseNodeGuid == currentNodeGUID).ToList();
-        choices = new List<string>();
+        choices = new List<int>();
 
         foreach (var text in choicesText)
         {
@@ -77,19 +77,23 @@ public class DialogueManager : MonoBehaviour
 
         foreach (var nodeLink in links)
         {
-            choices.Add(nodeLink.PortName);
+            choices.Add(int.Parse(nodeLink.PortName));
+            // Debug.Log(int.Parse(nodeLink.PortName));
         }
-        if (choices.Count == 1) {
+        choices.Sort();
+        if (choices.Count <= 1) {
             choiceBox.SetActive(false);
         } else {
             choiceBox.SetActive(true);
             choiceBox.GetComponent<RectTransform>().sizeDelta = new Vector2(250, choices.Count * 50);
             for (var i = 0; i < choices.Count; i++) {
-                choicesText[i].text = choices[i];
+                choicesText[i].defaultField.index = choices[i];
+                choicesText[i].SetDefaultText();
                 choicesText[i].gameObject.SetActive(true);
+                choicesText[i].text.color = Color.black;
             }
         }
 
-        choicesText[currentSelection].color = Color.blue;
+        choicesText[currentSelection].text.color = Color.blue;
     }
 }

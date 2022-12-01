@@ -10,6 +10,8 @@ public class DialogueNode : Node
 
     public string DialogueText;
 
+    public int LocalizationIndex;
+
     public bool EntryPoint = false;
 
 }

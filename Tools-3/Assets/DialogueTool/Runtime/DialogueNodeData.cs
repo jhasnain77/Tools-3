@@ -8,7 +8,8 @@ public class DialogueNodeData
 {
 
     public string Guid;
-    public string DialogueText; // Likely change this to the key from language tool
+    public string DialogueText;
+    public int LocalizationIndex;
     public Vector2 Position;
 
 }

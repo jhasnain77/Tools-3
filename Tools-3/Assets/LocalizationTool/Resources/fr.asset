@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fdf265e4e281c2439f14bfed6a6cc6a, type: 3}
+  m_Name: fr
+  m_EditorClassIdentifier: 
+  fields:
+  - "D\xE9but"
+  - Change Langue
+  - Prochain
+  - "(???): All\xF4, est-ce que \xE7a va?"
+  - '(Miyu): ...Quoi?'
+  - "(???): Tu te dormi au milieu du for\xEAt et tu te sens blesser."
+  - '(Miyu): Oh... Oui, je suis d''accord, je pense.'
+  - '(Miyu): Qui es-tu?'
+  - '(Meili): Moi? Je m''appelle Meili! J''habite au ville proche d''ici! Et toi?'
+  - "(Miyu): Enchant\xE9 de faire votre connaissance! Je pense que... je m'appelle
+    Miyu?"
+  - '(Meili): Tu pense?'
+  - "(Miyu): Je ne me souviens pas. O\xF9 sommes-nous?"
+  - "(Meili): Amn\xE9sie? De toute fa\xE7on, cela c'est le for\xEAt de Delphi, sur
+    let continent de Teien!"
+  - Fin du taquin
+  - "Projet Spectre: Prologue - Bient\xF4t Disponible"
+  - "Langue Actuel: Fran\xE7ais"
+  - Bonjour tout le monde!
+  - "\xC2llo!"
+  - Salut!
+  - "\xC2llo tout le monde!"
+  - Salut tout le monde!
+  - Laisse nous faisons une exemple de choisir un parmi beaucoup d'options!
+  - "Cela va aussi int\xE9grer une option qui va te retourner ici!"
+  - "Maintenant, choisir une option! Je vais le r\xE9p\xE9ter :)"
+  - Sourire
+  - Sourciller
+  - Saute
+  - Danse
+  - 'Tu as choisi: Sourire :)'
+  - 'Tu as choisi: Sourciller :('
+  - "Tu as choisi: Saute \u2E02\u2E02\u2E1C(\u0D30\u1D17\u0D30\u0E51)\u2E1D\u2E03\u2E03"
+  - "Tu as choisi: Danse (\u3065 \u25D5\u203F\u25D5 )\u3065"
+  - Et puis, tous les options nous retournons ici!
+  - Voulez-vous choisir une autre option ce fois la?
+  - Oui
+  - Non
+  - "D'accord! J'espere que tu t'es amus\xE9! \xC0 la prochaine :)"

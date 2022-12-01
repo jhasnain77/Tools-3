@@ -29,6 +29,7 @@ public class DialogueGraphView : GraphView
             title = "START",
             GUID = System.Guid.NewGuid().ToString(),
             DialogueText = "ENTRYPOINT",
+            LocalizationIndex = 0,
             EntryPoint = true
         };
 
@@ -44,12 +45,15 @@ public class DialogueGraphView : GraphView
         return node;
     }
 
-    public DialogueNode CreateDialogueNode(string name) {
+    public DialogueNode CreateDialogueNode(string name, int index = 0) {
         var dialogueNode = new DialogueNode{
             title = name,
             DialogueText = name,
+            LocalizationIndex = index,
             GUID = System.Guid.NewGuid().ToString()
         };
+
+        Debug.Log(index);
 
         var inputPort = GeneratePort(dialogueNode, Direction.Input, Port.Capacity.Multi);
         inputPort.portName = "Input";
@@ -66,10 +70,15 @@ public class DialogueGraphView : GraphView
             dialogueNode.DialogueText = evt.newValue;
             dialogueNode.title = evt.newValue;
         });
-
         textField.SetValueWithoutNotify(dialogueNode.title);
-
         dialogueNode.mainContainer.Add(textField);
+
+        var inputField = new TextField("Localization Index: ");
+        inputField.value = index.ToString();
+        inputField.RegisterValueChangedCallback(evt => {
+            dialogueNode.LocalizationIndex = int.Parse(evt.newValue);
+        });
+        dialogueNode.mainContainer.Add(inputField);
 
         dialogueNode.RefreshExpandedState();
         dialogueNode.RefreshPorts();
@@ -78,8 +87,8 @@ public class DialogueGraphView : GraphView
         return dialogueNode;
     }
 
-    public void CreateNode(string name) {
-        AddElement(CreateDialogueNode(name));
+    public void CreateNode(string name, int index = 0) {
+        AddElement(CreateDialogueNode(name, index));
     }
 
     public override List<Port> GetCompatiblePorts(Port startPort, NodeAdapter nodeAdapter) {
@@ -102,11 +111,11 @@ public class DialogueGraphView : GraphView
         generatedPort.contentContainer.Remove(oldLabel);
 
         var outputPortCount = dialogueNode.outputContainer.Query("connector").ToList().Count;
-        var outputPortName = $"Choice {outputPortCount}";
+        var outputPortName = $"{outputPortCount}";
 
         var choicePortName = string.IsNullOrEmpty(overridenPortName) ? outputPortName : overridenPortName;
 
-        var textField = new TextField {
+        var textField = new TextField("Index: ") {
             name = string.Empty,
             value = choicePortName
         };

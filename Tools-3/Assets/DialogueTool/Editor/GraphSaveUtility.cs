@@ -47,6 +47,7 @@ public class GraphSaveUtility
             dialogueContainer.DialogueNodeData.Add(new DialogueNodeData {
                 Guid = node.GUID,
                 DialogueText = node.DialogueText,
+                LocalizationIndex = node.LocalizationIndex,
                 Position = node.GetPosition().position
             });
         }
@@ -88,7 +89,7 @@ public class GraphSaveUtility
     private void CreateNodes() {
         foreach (var nodeData in containerCache.DialogueNodeData)
         {
-            var temp = targetGraph.CreateDialogueNode(nodeData.DialogueText);
+            var temp = targetGraph.CreateDialogueNode(nodeData.DialogueText, nodeData.LocalizationIndex);
             temp.GUID = nodeData.Guid;
             targetGraph.AddElement(temp);
 

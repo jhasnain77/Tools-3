@@ -17,18 +17,106 @@ MonoBehaviour:
     PortName: Next
     TargetNodeGuid: ed5f1f07-a3fd-4a74-b111-7f9011cd2b71
   - BaseNodeGuid: ed5f1f07-a3fd-4a74-b111-7f9011cd2b71
-    PortName: Hey!
+    PortName: 17
     TargetNodeGuid: 83917aee-f9de-4b5a-be58-8b2d5383ed3e
   - BaseNodeGuid: ed5f1f07-a3fd-4a74-b111-7f9011cd2b71
-    PortName: Hi!
+    PortName: 18
     TargetNodeGuid: cab75bee-356d-40a5-837e-6c54d65fa537
+  - BaseNodeGuid: cab75bee-356d-40a5-837e-6c54d65fa537
+    PortName: 0
+    TargetNodeGuid: 6cd91e1e-89c5-4a93-a45c-64963d9663b3
+  - BaseNodeGuid: 6cd91e1e-89c5-4a93-a45c-64963d9663b3
+    PortName: 0
+    TargetNodeGuid: bfcedc46-2cdd-46f7-8170-e45535b52951
+  - BaseNodeGuid: bfcedc46-2cdd-46f7-8170-e45535b52951
+    PortName: 0
+    TargetNodeGuid: 38d7eea5-ce1d-429c-884d-3b0f1e79f028
+  - BaseNodeGuid: 38d7eea5-ce1d-429c-884d-3b0f1e79f028
+    PortName: 24
+    TargetNodeGuid: e1207156-b452-4604-979b-19167982a782
+  - BaseNodeGuid: 38d7eea5-ce1d-429c-884d-3b0f1e79f028
+    PortName: 25
+    TargetNodeGuid: 8ba7b28b-ce24-404e-a963-2fd290521a72
+  - BaseNodeGuid: 38d7eea5-ce1d-429c-884d-3b0f1e79f028
+    PortName: 26
+    TargetNodeGuid: bb607231-86fd-4b30-8060-019e0acd133b
+  - BaseNodeGuid: 38d7eea5-ce1d-429c-884d-3b0f1e79f028
+    PortName: 27
+    TargetNodeGuid: 24a9c306-4d5a-4d95-9c5b-d43ad5becec8
+  - BaseNodeGuid: 8ba7b28b-ce24-404e-a963-2fd290521a72
+    PortName: 0
+    TargetNodeGuid: 80f4ab15-db4b-40b8-8fca-41aa90a03377
+  - BaseNodeGuid: bb607231-86fd-4b30-8060-019e0acd133b
+    PortName: 0
+    TargetNodeGuid: 80f4ab15-db4b-40b8-8fca-41aa90a03377
+  - BaseNodeGuid: 24a9c306-4d5a-4d95-9c5b-d43ad5becec8
+    PortName: 0
+    TargetNodeGuid: 80f4ab15-db4b-40b8-8fca-41aa90a03377
+  - BaseNodeGuid: 220574e4-6902-4f3e-aae6-3062121821f0
+    PortName: 35
+    TargetNodeGuid: 38d7eea5-ce1d-429c-884d-3b0f1e79f028
+  - BaseNodeGuid: 220574e4-6902-4f3e-aae6-3062121821f0
+    PortName: 34
+    TargetNodeGuid: 6b6e9db2-1df3-4370-a6ca-5fb014716407
+  - BaseNodeGuid: e1207156-b452-4604-979b-19167982a782
+    PortName: 0
+    TargetNodeGuid: 80f4ab15-db4b-40b8-8fca-41aa90a03377
+  - BaseNodeGuid: 80f4ab15-db4b-40b8-8fca-41aa90a03377
+    PortName: 0
+    TargetNodeGuid: 220574e4-6902-4f3e-aae6-3062121821f0
+  - BaseNodeGuid: 83917aee-f9de-4b5a-be58-8b2d5383ed3e
+    PortName: 0
+    TargetNodeGuid: 6cd91e1e-89c5-4a93-a45c-64963d9663b3
   DialogueNodeData:
-  - Guid: 83917aee-f9de-4b5a-be58-8b2d5383ed3e
-    DialogueText: Hey world!
-    Position: {x: 515.2, y: 122.399994}
+  - Guid: ed5f1f07-a3fd-4a74-b111-7f9011cd2b71
+    DialogueText: Hello world! - Hey, Hi
+    LocalizationIndex: 16
+    Position: {x: 194, y: 244}
   - Guid: cab75bee-356d-40a5-837e-6c54d65fa537
     DialogueText: Hi world!
-    Position: {x: 515.2, y: 301.6}
-  - Guid: ed5f1f07-a3fd-4a74-b111-7f9011cd2b71
-    DialogueText: Hello world!
-    Position: {x: 249.6, y: 200}
+    LocalizationIndex: 20
+    Position: {x: 545, y: 387}
+  - Guid: 6cd91e1e-89c5-4a93-a45c-64963d9663b3
+    DialogueText: Let's do an example
+    LocalizationIndex: 21
+    Position: {x: 969, y: 262}
+  - Guid: bfcedc46-2cdd-46f7-8170-e45535b52951
+    DialogueText: More info
+    LocalizationIndex: 22
+    Position: {x: 1366, y: 262}
+  - Guid: 38d7eea5-ce1d-429c-884d-3b0f1e79f028
+    DialogueText: 4 choices
+    LocalizationIndex: 23
+    Position: {x: 1734, y: -87}
+  - Guid: 6b6e9db2-1df3-4370-a6ca-5fb014716407
+    DialogueText: Bye bye
+    LocalizationIndex: 36
+    Position: {x: 3572, y: 262}
+  - Guid: 8ba7b28b-ce24-404e-a963-2fd290521a72
+    DialogueText: Frown
+    LocalizationIndex: 29
+    Position: {x: 2148, y: 203}
+  - Guid: bb607231-86fd-4b30-8060-019e0acd133b
+    DialogueText: Jump
+    LocalizationIndex: 30
+    Position: {x: 2148, y: 360}
+  - Guid: 24a9c306-4d5a-4d95-9c5b-d43ad5becec8
+    DialogueText: Dance
+    LocalizationIndex: 31
+    Position: {x: 2148, y: 517}
+  - Guid: 220574e4-6902-4f3e-aae6-3062121821f0
+    DialogueText: Go again?
+    LocalizationIndex: 33
+    Position: {x: 3129, y: 111}
+  - Guid: e1207156-b452-4604-979b-19167982a782
+    DialogueText: Smile
+    LocalizationIndex: 28
+    Position: {x: 2148, y: 64}
+  - Guid: 80f4ab15-db4b-40b8-8fca-41aa90a03377
+    DialogueText: All back here
+    LocalizationIndex: 32
+    Position: {x: 2641, y: 262}
+  - Guid: 83917aee-f9de-4b5a-be58-8b2d5383ed3e
+    DialogueText: Hey world!
+    LocalizationIndex: 19
+    Position: {x: 545, y: 152}

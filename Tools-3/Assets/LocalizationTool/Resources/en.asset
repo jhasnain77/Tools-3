@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fdf265e4e281c2439f14bfed6a6cc6a, type: 3}
+  m_Name: en
+  m_EditorClassIdentifier: 
+  fields:
+  - Start
+  - Change Language
+  - Next
+  - '(???): Hey, are you okay?'
+  - '(Miyu): ...Wha?'
+  - '(???): You''re sleeping in the middle of the forest and look pretty hurt.'
+  - '(Miyu): Oh... Yeah, I''m okay, I think.'
+  - '(Miyu): Who are you?'
+  - '(Meili): Oh me? My name is Meili! I live in the town nearby! What about you?'
+  - '(Miyu): Nice to meet you! I think my name is... Miyu?'
+  - '(Meili): You think?'
+  - '(Miyu): I can''t remember anything. Where are we?'
+  - '(Meili): Amnesia? Anyways, this is the Delphi Forest, on the Teien continent!'
+  - End of Teaser
+  - 'Project Spectre: Prologue - Coming Soon'
+  - 'Current Language: English'
+  - Hello world!
+  - Hey!
+  - Hi!
+  - Hey world!
+  - Hi world!
+  - Let's do an example of choosing one of multiple options!
+  - This will also include an option that will loop back!
+  - Now, choose an option! I'll repeat it back to you :)
+  - Smile
+  - Frown
+  - Jump
+  - Dance
+  - 'You chose: Smile :)'
+  - 'You chose: Frown :('
+  - "You chose: Jump \u2E02\u2E02\u2E1C(\u0D30\u1D17\u0D30\u0E51)\u2E1D\u2E03\u2E03"
+  - "You chose: Dance (\u3065 \u25D5\u203F\u25D5 )\u3065"
+  - And then all options lead back here!
+  - Would you like to choose a different option this time?
+  - Yes
+  - No
+  - Alright! I hope you had fun and enjoyed the demo! See you next time :)
